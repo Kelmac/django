@@ -1,0 +1,2 @@
+# django
+prosty przykład CMS
