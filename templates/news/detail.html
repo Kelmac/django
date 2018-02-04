@@ -1,0 +1,15 @@
+{% extends "base.html" %} {%block content%}
+
+<div class='news'>
+    <div class='news_title'>
+       <h1> {{post.title}}</h1>
+    </div>
+    <div class='news_body'>
+        {{post.body|linebreaks}}
+    </div>
+    <div class='news_author'>
+        Autor: {{post.author}} Data: {{post.publish}}
+    </div>
+</div>
+
+ {% endblock %}

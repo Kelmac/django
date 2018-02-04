@@ -1,0 +1,63 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Foto World</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="lib/font-awesome.min.css">
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&amp;subset=latin-ext" rel="stylesheet">
+
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- My Style -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+    <div class='header'>
+        <div class='menu'>
+            <div class="container">
+                <ul class="list-menu">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/news">News</a>
+                    </li>
+                    <li>
+                        <a href="/admin">Sign in</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class='logo'>
+        <div class="container">
+            <h1>FotoWorld</h1>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="empty col-lg-2 col-md-12 col-sm-12 col-xs-12"></div>
+        <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+            {% block content %} {% endblock %}
+        </div>
+        <div class="empty col-lg-2 col-md-12 col-sm-12 col-xs-12"></div>
+    </div>
+    </div>
+</body>

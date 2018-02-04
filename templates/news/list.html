@@ -1,0 +1,18 @@
+ {% extends "base.html" %} {%block content%}
+<h1 class='title_sections'> News</h1>
+{% for post in posts%}
+<div class='news'>
+    <div class='news_title'>
+        {{post.title}}
+    </div>
+    <div class='news_body'>
+        {{post.body|truncatewords:30|linebreaks}}
+        <a href=" {{  post.get_absolute_url }}">więcej</a>
+    </div>
+    <div class='news_author'>
+        Autor: {{post.author}} Data: {{post.publish}}
+    </div>
+  
+</div>
+
+{% endfor %} {% include "pagination.html" with page=page_obj %} {% endblock %}
