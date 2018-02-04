@@ -1,0 +1,23 @@
+{% extends "base.html" %} {%block content%}
+
+<h1 class='title_sections'> Logowanie</h1>
+
+
+{% if form.errors %}
+<p>Error, try again </p>
+{%endif%}
+<div class="login-form">
+    <form action="{% url 'account:login' %}" method="post">
+        {{form.as_p}} {% csrf_token %}
+        <p>
+            <input type="hidden" name="text" value="{{next}}" />
+        </p>
+        <p>
+            <input type="submit" value="Login">
+        </p>
+    </form>
+</div>
+
+
+
+{% endblock %}

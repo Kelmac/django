@@ -38,9 +38,24 @@
                     <li>
                         <a href="/news">News</a>
                     </li>
-                    <li>
-                        <a href="/admin">Sign in</a>
-                    </li>
+
+                    <span class="user">
+                        {% if request.user.is_authenticated %}
+                        <li>
+                            <a href="{% url 'account:dashboard' %}">
+                                <span style="color:white;">
+                                    {{request.user.first_name}}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'account:logout' %}"> Logout</a>
+                        </li>
+                        {% else %}
+                        <li>
+                            <a href="{% url 'account:login' %}"> Login</a>
+                        </li> {% endif %}
+                    </span>
+                    <!-- <a href="/account/login">Sign in</a> -->
                 </ul>
             </div>
         </div>
