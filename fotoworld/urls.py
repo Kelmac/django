@@ -16,10 +16,20 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.generic.base import TemplateView
+from django.conf import settings
+from django.conf.urls.static import static 
+
+
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^news/', include('news.urls', namespace='news', app_name='news')),
-    url(r'^account/', include('account.urls',namespace='account', app_name='account')),
+    url(r'^account/', include('account.urls',
+                              namespace='account', app_name='account')),
+
+    url(r'^images/', include('images.urls', namespace='images', app_name='images')),
     url(r'^$', TemplateView.as_view(template_name='home/index.html'), name="home"),
 ]
+
+if settings.DEBUG:
+    urlpatterns +=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

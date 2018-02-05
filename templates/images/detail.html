@@ -1,0 +1,26 @@
+{% extends "base.html" %} {%block content%}
+<h1 class='title_sections'> Foto: {{image.title}}</h1>
+
+
+
+<div class='news_author'>
+    Autor: {{image.user.first_name}} Data: {{image.created}}
+</div>
+<div class='news_title'>
+    {% load thumbnail %} {% thumbnail image.image "300" as im %}
+    <a href="{{image.image.url}}">
+        <img src="{{im.url}}" class="image-detail">
+
+    </a>
+    {% endthumbnail %}
+</div>
+<div class='news'>
+    <div class='news_body'>
+        {{image.description|linebreaks}}
+    </div>
+
+</div>
+
+
+
+{% endblock %}

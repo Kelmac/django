@@ -136,6 +136,43 @@ img {
     z-index: 1024;
     height: 30px;
 }
-.userName{
+
+.userName {
     color: white;
+}
+
+.image {
+    display: inline-flex;
+    margin: 5px 0;
+    padding: 4px;
+    border: 2px solid black;
+    background: white;
+    border-bottom-width: 4px;
+}
+
+.form {
+    margin: 5px 0;
+    padding: 4px;
+    border: 2px solid black;
+    border-bottom-width: 4px;
+}
+
+.form p{
+   text-align: center;
+    font-size: 25px;
+}
+
+.input input {
+    padding: 4px;
+    width: 100%;
+}
+.button{
+    display: inline-block;
+    text-align: right;
+    margin: 2px;
+    width: 100%;
+}
+.button button{
+    padding: 3px;
+    margin: 4px;
 }
