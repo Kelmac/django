@@ -33,7 +33,7 @@
             <div class="container">
                 <ul class="list-menu">
                     <li>
-                        <a href="/">Home</a>
+                        <a href="/images">Home</a>
                     </li>
                     <li>
                         <a href="/news">News</a>
@@ -67,12 +67,32 @@
         </div>
     </div>
     <div class="container">
-
-        <div class="empty col-lg-2 col-md-12 col-sm-12 col-xs-12"></div>
-        <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
             {% block content %} {% endblock %}
         </div>
-        <div class="empty col-lg-2 col-md-12 col-sm-12 col-xs-12"></div>
     </div>
     </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/jquery.cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+    <script>
+        var csrftoken = $.cookie('csrftoken');
+        function csrfSafeMethod(method) {
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method))
+        }
+        $.ajaxSetup({
+            beforeSend: function (xhr, settings) {
+                if (!csrfSafeMethod(settings.typoe) && !this.crossDomian) {
+                    xhr.setRequestheader("X-CSRFToken", csrftoken):
+                }
+            }
+        });
+        $(document).ready(function () {
+            {% block domready %}
+            {% endblock %}
+        });
+
+    </script>
 </body>
