@@ -102,13 +102,16 @@ img {
     text-align: justify;
     padding: 4px;
     margin-bottom: 5px;
+    width: 100%;
 }
 
 .news_body a {
     color: blue;
     font-weight: bold;
 }
-
+.news_body textarea{
+    width: 100%;
+}
 .news_author {
     font-size: 0.7em;
     text-align: right;
@@ -148,6 +151,7 @@ img {
     border: 2px solid black;
     background: white;
     border-bottom-width: 4px;
+    width: 100%;
 }
 
 .form {
@@ -157,8 +161,8 @@ img {
     border-bottom-width: 4px;
 }
 
-.form p{
-   text-align: center;
+.form p {
+    text-align: center;
     font-size: 25px;
 }
 
@@ -166,13 +170,28 @@ img {
     padding: 4px;
     width: 100%;
 }
-.button{
+
+.button {
     display: inline-block;
     text-align: right;
     margin: 2px;
     width: 100%;
 }
-.button button{
+
+.button button {
     padding: 3px;
     margin: 4px;
+}
+
+#image-list {
+    padding: 2px;
+    display: flex;
+    flex-flow: wrap;
+}
+
+.image-thumbnail {
+    margin: 4px;
+    padding: 4px;
+    border: 1px dashed rgb(9, 20, 119);
+    background: white;
 }

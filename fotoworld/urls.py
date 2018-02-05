@@ -28,7 +28,7 @@ urlpatterns = [
                               namespace='account', app_name='account')),
 
     url(r'^images/', include('images.urls', namespace='images', app_name='images')),
-    url(r'^$', TemplateView.as_view(template_name='images/list.html'), name="images"),
+    url(r'^$', TemplateView.as_view(template_name='home/index.html'), name="homr"),
 ]
 
 if settings.DEBUG:

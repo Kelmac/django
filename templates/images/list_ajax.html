@@ -1,11 +1,11 @@
 {% load thumbnail %} {% for image in images%}
 <div class="image-thumbnail">
-    <div class="info">
+    <div class="news_title">
         <a href="{{ image.get_absolute_url}}" class="title">
             {{image.title}}
         </a>
     </div>
-    <div class='image'>
+    <div class='image2'>
         <a href="{{ image.get.absolute_url}}">
             {% thumbnail image.image "100x100" crop="100%" as im %}
             <a href="{{ image.get_absolute_url }}">
@@ -14,9 +14,9 @@
             {% endthumbnail %}
         </a>
     </div>
-    <div class="info">
+    <div class="news_author">
         <a href="{{ image.get_absolute_url}}" class="title">
-            {{image.user.first_name}}
+           Author: {{image.user.first_name}}
         </a>
     </div>
 </div>
